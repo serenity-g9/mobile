@@ -16,8 +16,9 @@ fun NavGraph(navController: NavHostController) {
         composable("eventos") { EventosScreen() }
         composable("demandas") { DemandasScreen() }
         composable("dashboard") { DashboardScreen() }
-        composable("equipe") { EquipeScreen() }
+        composable("equipe") { EquipeScreen(navController) }
         composable("checkin") { CheckInScreen() }
+        composable("login"){ LoginScreen(navController)}
     }
 }
 

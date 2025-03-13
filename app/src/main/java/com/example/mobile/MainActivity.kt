@@ -7,7 +7,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.mobile.ui.navigation.NavGraph
+import com.example.mobile.ui.screens.EquipeScreen
 import com.example.mobile.ui.screens.HomeScreen
+import com.example.mobile.ui.screens.LoginScreen
 import com.example.mobile.ui.theme.MobileTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,3 +34,18 @@ fun PreviewHomeScreen() {
         HomeScreen(navController = rememberNavController())
     }
 }
+
+@Preview(showBackground = true, name = "Login Screen")
+@Composable
+fun PreviewLoginScreen() {
+    MobileTheme() {
+        LoginScreen(navController = rememberNavController())
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewEquipeScreen() {
+    EquipeScreen(navController = rememberNavController())
+}
+

@@ -12,16 +12,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
+
 private val DarkColorScheme = darkColorScheme(
     primary = Color(0xFF3F51B5),
     secondary = Color(0xFFFFFFFF),
-    tertiary = Color(0xFFF44336)
+    tertiary = Color(0xFFF44336),
+    background = Color(0xFF182F4E)
 )
 
 private val LightColorScheme = lightColorScheme(
     primary = Color(0xFFFFFFFF),
     secondary = Color(0xFF001260),
-    tertiary = Color(0xFFF44336)
+    tertiary = Color(0xFFF44336),
+    background = Color(0xFFF6F7F8)
+
+
 
     /* Other default colors to override
     background = Color(0xFFFFFBFE),
@@ -56,4 +61,5 @@ fun MobileTheme(
         typography = Typography,
         content = content
     )
+
 }
