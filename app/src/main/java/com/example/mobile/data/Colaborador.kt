@@ -1,23 +1,22 @@
 package com.example.mobile.data
 
-import androidx.annotation.DrawableRes
 import com.example.mobile.R
 
-data class Collaborator(
-    val name: String,
-    val lastJob: String,
-    @DrawableRes val image: Int,
-    val age: Int = 25,
-    val experience: List<String> = listOf(),
-    val contact: String = "email@empresa.com"
+data class Colaborador(
+    val id: Int,
+    val nome: String,
+    val ultimoTrabalho: String,
+    val avaliacao: Float,
+    val imagemRes: Int // ID do recurso da imagem
 )
 
-// Simulando uma lista de colaboradores
-val collaboratorsList = listOf(
-    Collaborator("Eduardo", "Mochileiro", R.drawable.baseline_face_24, experience = listOf("Atendente", "Repositor")),
-    Collaborator("Camila", "Atendente", R.drawable.baseline_face_24, experience = listOf("Atendente")),
-    Collaborator("Betânia", "Mochileira", R.drawable.baseline_face_24, experience = listOf("Caixa", "Vendas")),
-    Collaborator("Eduardo", "Coordenador", R.drawable.baseline_face_24, experience = listOf("Gestor"))
+// Lista de colaboradores para exibição
+val colaboradores = listOf(
+    Colaborador(1, "Eduardo", "Mochileiro", 4.0f, R.drawable.baseline_face_24),
+    Colaborador(2, "Camila", "Atendente", 3.5f, R.drawable.baseline_face_24),
+    Colaborador(3, "Betânia", "Mochileira", 4.5f, R.drawable.baseline_face_24),
+    Colaborador(4, "Eduardo", "Coordenador", 4.2f, R.drawable.baseline_face_24)
 )
+
 
 

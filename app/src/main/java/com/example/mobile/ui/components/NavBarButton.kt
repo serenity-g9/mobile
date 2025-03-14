@@ -19,29 +19,49 @@ import androidx.navigation.NavController
 import com.example.mobile.R
 import com.example.mobile.ui.theme.PrimaryColorDeepBlue
 
+//@Composable
+//fun BottomNavBar(
+//    items: List<Int>,  // Lista de ícones
+//    onItemClick: (Int) -> Unit  // Função de clique
+//) {
+//    Row(
+//        modifier = Modifier
+//            .fillMaxWidth()
+//            .background(PrimaryColorDeepBlue)
+//            .padding(vertical = 8.dp),
+//        horizontalArrangement = Arrangement.SpaceAround,
+//        verticalAlignment = Alignment.CenterVertically
+//    ) {
+//        items.forEach { iconRes ->
+//            IconButton(onClick = { onItemClick(iconRes) }) {
+//                Icon(
+//                    painter = painterResource(id = iconRes),
+//                    contentDescription = "Menu Item",
+//                    tint = Color.White,
+//                    modifier = Modifier
+//                        .size(40.dp)
+//                        .clip(CircleShape)
+//                        .padding(8.dp)
+//                )
+//            }
+//        }
+//    }
+//}
+
 @Composable
 fun BottomNavBar(
-    items: List<Int>,  // Lista de ícones
-    onItemClick: (Int) -> Unit  // Função de clique
+    items: List<Int>,
+    onItemClick: (Int) -> Unit // 👈 Este parâmetro é obrigatório
 ) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(PrimaryColorDeepBlue)
-            .padding(vertical = 8.dp),
-        horizontalArrangement = Arrangement.SpaceAround,
-        verticalAlignment = Alignment.CenterVertically
+    BottomAppBar(
+        containerColor = Color(0xFF002D62)
     ) {
-        items.forEach { iconRes ->
-            IconButton(onClick = { onItemClick(iconRes) }) {
+        items.forEachIndexed { index, item ->
+            IconButton(onClick = { onItemClick(index) }) { // 👈 Chama a função passada
                 Icon(
-                    painter = painterResource(id = iconRes),
-                    contentDescription = "Menu Item",
-                    tint = Color.White,
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape)
-                        .padding(8.dp)
+                    painter = painterResource(id = item),
+                    contentDescription = null,
+                    tint = Color.White
                 )
             }
         }
