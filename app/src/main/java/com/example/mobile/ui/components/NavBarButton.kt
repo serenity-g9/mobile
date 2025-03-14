@@ -51,18 +51,28 @@ import com.example.mobile.ui.theme.PrimaryColorDeepBlue
 @Composable
 fun BottomNavBar(
     items: List<Int>,
-    onItemClick: (Int) -> Unit // 👈 Este parâmetro é obrigatório
+    onItemClick: (Int) -> Unit
 ) {
     BottomAppBar(
-        containerColor = Color(0xFF002D62)
+        modifier = Modifier.fillMaxWidth(),
+        containerColor = Color(0xFF002D62),
+        tonalElevation = 8.dp
     ) {
-        items.forEachIndexed { index, item ->
-            IconButton(onClick = { onItemClick(index) }) { // 👈 Chama a função passada
-                Icon(
-                    painter = painterResource(id = item),
-                    contentDescription = null,
-                    tint = Color.White
-                )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly, // Distribui os itens de forma equilibrada
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            items.forEachIndexed { index, item ->
+                IconButton(onClick = { onItemClick(index) }) {
+                    Icon(
+                        painter = painterResource(id = item),
+                        contentDescription = null,
+                        tint = Color.White
+                    )
+                }
             }
         }
     }

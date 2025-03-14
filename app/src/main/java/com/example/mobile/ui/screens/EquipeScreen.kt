@@ -59,7 +59,8 @@ fun EquipeScreen(navController: NavController) {
                 R.drawable.baseline_dashboard_customize_24,
                 R.drawable.ticket_24,
                 R.drawable.logo,
-                R.drawable.bag_24
+                R.drawable.bag_24,
+                R.drawable.outline_equipe
             ),
             onItemClick = { index ->
                 when (index) {
